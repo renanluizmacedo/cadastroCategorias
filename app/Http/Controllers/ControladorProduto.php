@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Produto;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,11 @@ class ControladorProduto extends Controller
      */
     public function index()
     {
-        return view('produtos');
+
+
+        $prod = Produto::all();
+        return view('produtos', compact('prod'));
+
     }
 
     /**
@@ -23,7 +28,8 @@ class ControladorProduto extends Controller
      */
     public function create()
     {
-        //
+        return view('novoproduto');
+
     }
 
     /**
@@ -34,7 +40,20 @@ class ControladorProduto extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $prod = new Produto();
+
+        $prod->nome = //$request->input('nomeProduto');
+        $prod->estoque = //$request->input('qntdEstoque');
+        $prod->preco = //$request->input('preco');
+
+        $prod->nome = 'Celular';
+        $prod->estoque = 10;
+        $prod->preco = 2000;
+        var_dump($prod);
+
+        //$prod->save();
+        return redirect('/produtos');
+
     }
 
     /**
@@ -56,8 +75,11 @@ class ControladorProduto extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $prod = Produto::find($id);
+        if(isset($prod)){
+            return view('editarproduto',compact('prod'));
+        }        
+        return redirect('/produtos');    }
 
     /**
      * Update the specified resource in storage.
@@ -68,7 +90,13 @@ class ControladorProduto extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $prod = Produto::find($id);
+        if(isset($prod)){
+            $prod->nome = $request->input('nomeProduto');
+            $prod->save();
+        }        
+        return redirect('/produtos');    
+
     }
 
     /**
@@ -79,6 +107,13 @@ class ControladorProduto extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $prod = Produto::find($id);
+
+        if(isset($prod)){
+            $prod->delete();
+        }
+        return redirect('/produtos');
+ 
     }
 }
