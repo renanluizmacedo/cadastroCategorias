@@ -66,8 +66,9 @@ class ControladorProduto extends Controller
      */
     public function show($id)
     {        
-        $prod = Produto::all();
+        $prod = Produto::find($id);
         $cat = Categoria::all();
+        
         return view('infoprodutos',compact('prod','cat'));
     }
 

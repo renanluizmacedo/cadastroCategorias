@@ -14,22 +14,20 @@
                         </tr>
                     </thead>
                     <tbody>
-    @foreach($prod as $p)
-                        <tr>
-                            <td>{{$p->nome}}</td>
-                            @foreach($cat as $c)
+                    <tr>
+                        <td>{{$prod->nome}}</td>
+                        @foreach($cat as $c)
 
-                                @if($c->id == $p->categoria_id)
-                                    <td>{{$c->nome}}</td>
-                                @endif
-                            @endforeach
+                            @if($c->id == $prod->categoria_id)
+                                <td>{{$c->nome}}</td>
+                            @endif
+                        @endforeach
 
 
-                            <td>{{$p->estoque}}</td>
-                            <td>{{$p->preco}}</td>
-                        </tr>
+                        <td>{{$prod->estoque}}</td>
+                        <td>{{$prod->preco}}</td>
+                    </tr>
 
-    @endforeach
                     </tbody>
                 </table>
         </div>
