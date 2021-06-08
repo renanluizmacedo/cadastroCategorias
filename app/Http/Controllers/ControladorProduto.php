@@ -50,9 +50,9 @@ class ControladorProduto extends Controller
 
         $cat = Categoria::find($request->input('categoria'));
         
-        //if(isset($cat)){
-        $prod->categoria_id = $cat->id;
-        //}   
+        if(isset($cat)){
+            $prod->categoria_id = $cat->id;
+        }   
         $prod->save();
         return redirect('/produtos');
 
@@ -65,8 +65,10 @@ class ControladorProduto extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {        
+        $prod = Produto::all();
+        $cat = Categoria::all();
+        return view('infoprodutos',compact('prod','cat'));
     }
 
     /**
@@ -81,7 +83,8 @@ class ControladorProduto extends Controller
         if(isset($prod)){
             return view('editarproduto',compact('prod'));
         }        
-        return redirect('/produtos');    }
+        return redirect('/produtos');    
+    }
 
     /**
      * Update the specified resource in storage.

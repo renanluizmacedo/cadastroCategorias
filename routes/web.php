@@ -29,6 +29,7 @@ Route::get('/produtos',[ControladorProduto::class, 'index']);
 Route::get('/produtos/novo',[ControladorProduto::class, 'create']);
 Route::get('/produtos/apagar/{id}',[ControladorProduto::class, 'destroy']);
 Route::get('/produtos/editar/{id}',[ControladorProduto::class, 'edit']);
+Route::get('/produtos/show/{id}',[ControladorProduto::class, 'show']);
 
 Route::post('/produtos/{id}',[ControladorProduto::class, 'update']);
 Route::post('/produtos',[ControladorProduto::class, 'store']);

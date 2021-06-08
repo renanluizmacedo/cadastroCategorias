@@ -23,7 +23,7 @@
                                 <a href="/produtos/apagar/{{$p->id}}" 
                                     class="btn btn-sm btn-danger">Apagar</a>
  
-                                <a href="/produtos/show/{{$p->id}}" 
+                                <a href="/produtos/show/}" 
                                     class="btn btn-sm btn-info">Info</a>
                             </td>
                         </tr>
