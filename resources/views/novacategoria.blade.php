@@ -1,4 +1,4 @@
-@extends('layouts.app', ["current" => "categorias"])
+@extends('layouts.app',["current"=>"categorias"])
 
 @section('body')
 
@@ -12,7 +12,8 @@
                        id="nomeCategoria" placeholder="Categoria">
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-            <button type="cancel" class="btn btn-danger btn-sm">Cancel</button>
+            <a href="/categorias" class ="btn btn-danger btn-sm">Cancel</a>
+
         </form>
     </div>
 </div>

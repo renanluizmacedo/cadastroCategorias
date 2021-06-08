@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Produto;
+use App\Models\Categoria;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +16,6 @@ class ControladorProduto extends Controller
     public function index()
     {
 
-
         $prod = Produto::all();
         return view('produtos', compact('prod'));
 
@@ -28,8 +28,9 @@ class ControladorProduto extends Controller
      */
     public function create()
     {
-        return view('novoproduto');
 
+        $cats = Categoria::all();
+        return view('novoproduto', compact('cats'));
     }
 
     /**
@@ -41,11 +42,17 @@ class ControladorProduto extends Controller
     public function store(Request $request)
     {
         $prod = new Produto();
+        $cat = new Categoria();
 
         $prod->nome = $request->input('nomeProduto');
         $prod->estoque = $request->input('qntdEstoque');
         $prod->preco = $request->input('preco');
 
+        $cat = Categoria::find($request->input('categoria'));
+        
+        //if(isset($cat)){
+        $prod->categoria_id = $cat->id;
+        //}   
         $prod->save();
         return redirect('/produtos');
 

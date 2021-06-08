@@ -1,4 +1,4 @@
-@extends('layouts.app',["current" => "produtos"])
+@extends('layouts.app',["current"=>"categorias"])
 
 @section('body')
 
@@ -20,11 +20,24 @@
 
                     <label for="preco">Preço unitario</label>
                     <input type="text" class="form-control" 
-                            name = "preco" id = "preco" placeholder="Valor unitário">
+                            name="preco" id = "preco" placeholder="Valor unitário">
+
+                    <label for="categoria">Categoria </label>
+
+                    <select name="categoria" id = 
+                    "categoria" class="form-control form-select" aria-label="Default select example">
+
+                    <option selected>Categorias</option>
+        @foreach($cats as $cat)
+                    <option value="{{$cat->id}}">{{$cat->nome}}</option>
+
+        @endforeach
+                    </select>
                     
                 </div>
+
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                <button type="cancel" class="btn btn-danger btn-sm">Cancel</button>
+                <a href="/produtos" class ="btn btn-danger btn-sm">Cancel</a>
             </form>
 
         </div>

@@ -14,7 +14,7 @@
         }
     </style>
     <meta name = "csrf token" content="{{csrf_token()}}">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div class="container">
