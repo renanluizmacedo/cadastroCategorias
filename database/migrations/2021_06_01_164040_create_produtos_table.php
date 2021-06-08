@@ -20,7 +20,7 @@ class CreateProdutosTable extends Migration
             $table->float('preco')->unsigned()->index()->nullable();
             //$table->integer('estoque');
             //$table->float('preco');
-            $table->integer('categoria_id')->unsigned();
+            $table->integer('categoria_id')->unsigned()->index()->nullable();
             $table->foreign('categoria_id')->references('id')
                     ->on('categorias');
                     

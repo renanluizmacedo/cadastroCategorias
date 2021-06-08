@@ -42,16 +42,11 @@ class ControladorProduto extends Controller
     {
         $prod = new Produto();
 
-        $prod->nome = //$request->input('nomeProduto');
-        $prod->estoque = //$request->input('qntdEstoque');
-        $prod->preco = //$request->input('preco');
+        $prod->nome = $request->input('nomeProduto');
+        $prod->estoque = $request->input('qntdEstoque');
+        $prod->preco = $request->input('preco');
 
-        $prod->nome = 'Celular';
-        $prod->estoque = 10;
-        $prod->preco = 2000;
-        var_dump($prod);
-
-        //$prod->save();
+        $prod->save();
         return redirect('/produtos');
 
     }

@@ -10,7 +10,7 @@
                     <label for="nomeCategoria">Nome da Categoria</label>
                     <input type="text" class="form-control" 
                             name = "nomeCategoria" value="{{$cat->nome}}" id = "nomeCategoria" placeholder="Categoria">
-                    
+                            
 
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

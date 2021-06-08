@@ -4,7 +4,7 @@
 
 <div class="card border">
     <div class="card-body">
-        <form action="/categorias/novo" method="POST">
+        <form action="/categorias" method="post">
             @csrf
             <div class="form-group">
                 <label for="nomeCategoria">Nome da Categoria</label>

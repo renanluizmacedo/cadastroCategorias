@@ -4,7 +4,7 @@
 
     <div class="card border">
         <div class="card-body">
-            <form action="/produtos/novo" method="post">
+            <form action="/produtos" method="post">
                 @csrf                
                 <div class="form-group">
                     <label for="nomeProduto">Nome Do Produto</label>

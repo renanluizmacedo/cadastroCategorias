@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('categorias',[ControladorCategoria::class, 'index']);
-Route::get('categorias/novo',[ControladorCategoria::class, 'create']);
-Route::get('categorias/apagar/{id}',[ControladorCategoria::class, 'destroy']);
-Route::get('categorias/editar/{id}',[ControladorCategoria::class, 'edit']);
+Route::get('/categorias',[ControladorCategoria::class, 'index']);
+Route::get('/categorias/novo',[ControladorCategoria::class, 'create']);
+Route::get('/categorias/apagar/{id}',[ControladorCategoria::class, 'destroy']);
+Route::get('/categorias/editar/{id}',[ControladorCategoria::class, 'edit']);
 
-Route::post('categorias/{id}',[ControladorCategoria::class, 'update']);
-Route::post('categorias/novo',[ControladorCategoria::class, 'store']);
+Route::post('/categorias/{id}',[ControladorCategoria::class, 'update']);
+Route::post('/categorias',[ControladorCategoria::class, 'store']);
 
-Route::get('produtos',[ControladorProduto::class, 'index']);
-Route::get('produtos/novo',[ControladorProduto::class, 'create']);
-Route::get('produtos/apagar/{id}',[ControladorProduto::class, 'destroy']);
-Route::get('produtos/editar/{id}',[ControladorProduto::class, 'edit']);
+Route::get('/produtos',[ControladorProduto::class, 'index']);
+Route::get('/produtos/novo',[ControladorProduto::class, 'create']);
+Route::get('/produtos/apagar/{id}',[ControladorProduto::class, 'destroy']);
+Route::get('/produtos/editar/{id}',[ControladorProduto::class, 'edit']);
 
-Route::post('produtos/{id}',[ControladorProduto::class, 'update']);
-Route::post('produtos/novo',[ControladorProduto::class, 'store']);
+Route::post('/produtos/{id}',[ControladorProduto::class, 'update']);
+Route::post('/produtos',[ControladorProduto::class, 'store']);
 
 
 

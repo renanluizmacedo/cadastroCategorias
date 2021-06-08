@@ -22,15 +22,7 @@
                                     class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/produtos/apagar/{{$p->id}}" 
                                     class="btn btn-sm btn-danger">Apagar</a>
-
-
-
-
-
-
-
-
-                                    
+ 
                                 <a href="/produtos/show/{{$p->id}}" 
                                     class="btn btn-sm btn-info">Info</a>
                             </td>
